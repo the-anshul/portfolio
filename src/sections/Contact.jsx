@@ -22,6 +22,18 @@ const Contact = () => {
                             <span className="icon">📍</span>
                             <p>India</p>
                         </div>
+                        <div className="method social-item">
+                            <a href="https://www.linkedin.com/in/the-cyber-wolf" target="_blank" rel="noopener noreferrer" className="social-link-wrapper">
+                                <span className="icon">🔗</span>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                        <div className="method social-item">
+                            <a href="https://github.com/the-anshul" target="_blank" rel="noopener noreferrer" className="social-link-wrapper">
+                                <span className="icon">🐙</span>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
 

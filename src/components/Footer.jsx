@@ -4,9 +4,8 @@ const Footer = () => {
             <div className="footer-content">
                 <p>© 2026 ANSHUL. All rights reserved.</p>
                 <div className="social-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/the-cyber-wolf" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/the-anshul" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         </footer>

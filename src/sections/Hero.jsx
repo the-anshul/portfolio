@@ -41,6 +41,20 @@ const Hero = ({ userName }) => {
                     <a href="#projects" className="btn btn-primary">View My Work</a>
                     <a href="#contact" className="btn btn-outline">Contact Me</a>
                 </motion.div>
+
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="hero-socials"
+                >
+                    <a href="https://github.com/the-anshul" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <span className="icon">🐙</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/the-cyber-wolf" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <span className="icon">🔗</span>
+                    </a>
+                </motion.div>
             </div>
             
             {/* The 3D Canvas is handled in App.jsx via Experience component */}

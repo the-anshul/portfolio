@@ -173,6 +173,32 @@ h1 {
 .hero-cta {
   display: flex;
   gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-socials a {
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-socials a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 
 /* Button Styles */
@@ -465,6 +491,19 @@ h1 {
 
 .method .icon {
   font-size: 1.5rem;
+}
+
+.method a, .social-link-wrapper {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.method a:hover, .social-link-wrapper:hover {
+  color: var(--primary);
 }
 
 .contact-form {
