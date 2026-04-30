@@ -4,32 +4,21 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from '
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-    const [status, setStatus] = useState('idle') // idle | sending | success | error
+    const [status, setStatus] = useState('idle') // idle | success
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        setStatus('sending')
-
-        try {
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-
-            if (response.ok) {
-                setStatus('success')
-                setFormData({ name: '', email: '', message: '' })
-            } else {
-                setStatus('error')
-            }
-        } catch {
-            setStatus('error')
-        }
+        const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`)
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )
+        window.open(`mailto:the.cyber.wolf.4@gmail.com?subject=${subject}&body=${body}`)
+        setStatus('success')
+        setFormData({ name: '', email: '', message: '' })
     }
 
     return (
@@ -124,16 +113,8 @@ const Contact = () => {
                         />
                     </div>
 
-                    <button
-                        type="submit"
-                        className="btn btn-primary submit-btn"
-                        disabled={status === 'sending'}
-                    >
-                        {status === 'sending' ? (
-                            'Sending...'
-                        ) : (
-                            <><FaPaperPlane style={{ marginRight: '0.5rem' }} /> Send Message</>
-                        )}
+                    <button type="submit" className="btn btn-primary submit-btn">
+                        <FaPaperPlane style={{ marginRight: '0.5rem' }} /> Send Message
                     </button>
 
                     {status === 'success' && (
@@ -142,16 +123,7 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="form-status success"
                         >
-                            ✅ Message sent successfully! I'll get back to you soon.
-                        </motion.p>
-                    )}
-                    {status === 'error' && (
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="form-status error"
-                        >
-                            ❌ Something went wrong. Try emailing me directly.
+                            ✅ Email client opened! Message ready to send.
                         </motion.p>
                     )}
                 </motion.form>

@@ -17,11 +17,14 @@ const experiences = [
     },
     {
         title: "Certifications & Achievements",
-        company: "TryHackMe · HackTheBox · Coursera",
+        company: "TryHackMe · Coursera",
         duration: "2023 – Present",
         description: "Completed labs and learning paths in ethical hacking, network security, and digital forensics. Consistently solving CTF challenges to sharpen offensive and defensive security skills.",
         icon: "🏆",
-        certLink: "/thm-certificate.pdf"
+        certs: [
+            { label: "📄 TryHackMe Certificate", link: "/thm-certificate.pdf" },
+            { label: "📄 Intro to Cybersecurity", link: "/intro-cybersec-cert.pdf" }
+        ]
     }
 ]
 
@@ -54,15 +57,20 @@ const WorkExperience = () => {
                             <h3>{exp.title}</h3>
                             <h4 className="gradient-text">{exp.company}</h4>
                             <p>{exp.description}</p>
-                            {exp.certLink && (
-                                <a
-                                    href={exp.certLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="cert-link"
-                                >
-                                    📄 View TryHackMe Certificate
-                                </a>
+                            {exp.certs && (
+                                <div className="cert-links">
+                                    {exp.certs.map((cert, i) => (
+                                        <a
+                                            key={i}
+                                            href={cert.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="cert-link"
+                                        >
+                                            {cert.label}
+                                        </a>
+                                    ))}
+                                </div>
                             )}
                         </div>
                     </motion.div>

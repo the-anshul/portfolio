@@ -474,6 +474,13 @@ h1 {
   line-height: 1.7;
 }
 
+.cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 .cert-link {
   display: inline-block;
   margin-top: 1rem;
