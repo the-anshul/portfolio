@@ -474,6 +474,25 @@ h1 {
   line-height: 1.7;
 }
 
+.cert-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--glass-border);
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cert-link:hover {
+  border-color: var(--primary);
+  background: rgba(0, 255, 65, 0.08);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
 /* Contact Section Styles */
 .contact-section {
   display: flex;

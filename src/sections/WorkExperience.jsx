@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const experiences = [
     {
         title: "B.Tech — Computer Science & Engineering",
-        company: "Amity University",
-        duration: "2023 – 2027",
+        company: "Maharishi University, Noida",
+        duration: "2023 – 2026",
         description: "Specializing in Cybersecurity and Network Defense. Actively building practical tools, participating in CTFs, and exploring areas like OSINT, penetration testing, and security automation.",
         icon: "🎓"
     },
@@ -20,7 +20,8 @@ const experiences = [
         company: "TryHackMe · HackTheBox · Coursera",
         duration: "2023 – Present",
         description: "Completed labs and learning paths in ethical hacking, network security, and digital forensics. Consistently solving CTF challenges to sharpen offensive and defensive security skills.",
-        icon: "🏆"
+        icon: "🏆",
+        certLink: "/thm-certificate.pdf"
     }
 ]
 
@@ -53,6 +54,16 @@ const WorkExperience = () => {
                             <h3>{exp.title}</h3>
                             <h4 className="gradient-text">{exp.company}</h4>
                             <p>{exp.description}</p>
+                            {exp.certLink && (
+                                <a
+                                    href={exp.certLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="cert-link"
+                                >
+                                    📄 View TryHackMe Certificate
+                                </a>
+                            )}
                         </div>
                     </motion.div>
                 ))}
