@@ -836,3 +836,79 @@ h1 {
   border-radius: 1rem;
   font-weight: 600;
 }
+
+/* Global Mobile Responsive Overrides */
+@media (max-width: 768px) {
+  /* Menu Overlay Fix */
+  .nav-links {
+    background: var(--bg-dark) !important;
+    width: 100% !important; /* Full width mobile menu */
+    border-left: none !important;
+  }
+  
+  .nav-logo a {
+    font-size: 1.3rem !important;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+
+  /* Hero Section Fix */
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  section {
+    padding: 6rem 1.5rem 3rem !important;
+  }
+
+  /* Padding Fixes for cards and containers */
+  .skills-container {
+    padding: 1.5rem !important;
+  }
+
+  .bento-card {
+    padding: 1.5rem !important;
+  }
+
+  .project-info {
+    padding: 1.5rem !important;
+  }
+
+  .experience-card {
+    padding: 1.5rem !important;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .social-links a {
+    font-size: 1.2rem;
+  }
+}

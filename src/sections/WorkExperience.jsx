@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const experiences = [
     {
-        title: "B.Tech — Computer Science & Engineering",
+        title: "B.Tech — Cyber Security",
         company: "Maharishi University, Noida",
         duration: "2023 – 2026",
         description: "Specializing in Cybersecurity and Network Defense. Actively building practical tools, participating in CTFs, and exploring areas like OSINT, penetration testing, and security automation.",
