@@ -22,8 +22,7 @@ const Contact = () => {
                 Accept: 'application/json'
             },
             body: JSON.stringify({
-                // TODO: Replace with your actual Access Key from web3forms.com
-                access_key: "YOUR_ACCESS_KEY_HERE",
+                access_key: "e050d20c-dcae-4f29-84a5-7cc987014ba2",
                 name: formData.name,
                 email: formData.email,
                 message: formData.message,
