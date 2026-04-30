@@ -10,15 +10,38 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`)
-        const body = encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        )
-        window.open(`mailto:the.cyber.wolf.4@gmail.com?subject=${subject}&body=${body}`)
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
+        setStatus('sending') // Use sending state while API request is made
+
+        // API Endpoint for Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                // TODO: Replace with your actual Access Key from web3forms.com
+                access_key: "YOUR_ACCESS_KEY_HERE",
+                name: formData.name,
+                email: formData.email,
+                message: formData.message,
+                subject: "New Contact Form Submission from Portfolio"
+            })
+        })
+
+        const result = await response.json()
+
+        if (result.success) {
+            setStatus('success')
+            setFormData({ name: '', email: '', message: '' })
+            // Reset status after a few seconds
+            setTimeout(() => setStatus('idle'), 5000)
+        } else {
+            setStatus('error')
+            setTimeout(() => setStatus('idle'), 5000)
+        }
     }
 
     return (
@@ -113,8 +136,8 @@ const Contact = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary submit-btn">
-                        <FaPaperPlane style={{ marginRight: '0.5rem' }} /> Send Message
+                    <button type="submit" className="btn btn-primary submit-btn" disabled={status === 'sending'}>
+                        {status === 'sending' ? 'Sending...' : <><FaPaperPlane style={{ marginRight: '0.5rem' }} /> Send Message</>}
                     </button>
 
                     {status === 'success' && (
@@ -123,7 +146,16 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="form-status success"
                         >
-                            ✅ Email client opened! Message ready to send.
+                            ✅ Message sent successfully! I'll get back to you soon.
+                        </motion.p>
+                    )}
+                    {status === 'error' && (
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="form-status error"
+                        >
+                            ❌ Something went wrong. Please check your Access Key.
                         </motion.p>
                     )}
                 </motion.form>
