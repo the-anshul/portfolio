@@ -2,6 +2,14 @@ import { motion } from 'framer-motion'
 
 const projects = [
     {
+        title: "ReconX",
+        description: "A modular, async CLI-based Recon, Enumeration & Vulnerability automation framework. Built with an adapter pattern for external tools, centralized data models, state management for resumability, auto tool installation, and rich reporting.",
+        tags: ["Python", "AsyncIO", "Pydantic", "Rich", "CLI", "Cybersecurity"],
+        image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=800",
+        link: "https://github.com/the-anshul/reconx",
+        github: "https://github.com/the-anshul/reconx"
+    },
+    {
         title: "Logs Analyser",
         description: "A comprehensive log analysis engine designed to parse and monitor server logs for security anomalies, performance bottlenecks, and automated threat detection.",
         tags: ["Python", "Data Analysis", "Security", "Logging"],
