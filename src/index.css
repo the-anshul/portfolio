@@ -108,6 +108,18 @@ h1 {
   cursor: auto;
 }
 
+/* Scroll Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+  transform-origin: 0%;
+  z-index: 10000;
+}
+
 /* Navbar styles */
 .navbar {
   position: fixed;

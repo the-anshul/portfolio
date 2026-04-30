@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
+import Typewriter from 'typewriter-effect'
 
 const Hero = ({ userName }) => {
     return (
@@ -23,15 +24,28 @@ const Hero = ({ userName }) => {
                     Through Tactical Research
                 </motion.h1>
 
-                <motion.p 
+                <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="hero-description"
                 >
-                    Cybersecurity Student specializing in Threat Intelligence, 
-                    Network Security, and Incident Response.
-                </motion.p>
+                    <Typewriter
+                        options={{
+                            strings: [
+                                'Cybersecurity Student',
+                                'Threat Intelligence Analyst',
+                                'Network Security Enthusiast',
+                                'Incident Responder',
+                                'Tool Builder'
+                            ],
+                            autoStart: true,
+                            loop: true,
+                            delay: 50,
+                            deleteSpeed: 30,
+                        }}
+                    />
+                </motion.div>
 
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,6 @@
 import { useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import { Experience } from './components/Experience'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
@@ -15,6 +15,13 @@ import Skills from './sections/Skills'
 function App() {
     const [showIntro, setShowIntro] = useState(true)
     const [userName, setUserName] = useState('')
+    
+    const { scrollYProgress } = useScroll()
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    })
 
     return (
         <main>
@@ -31,6 +38,7 @@ function App() {
                         animate={{ opacity: 1 }}
                         className="content-container"
                     >
+                        <motion.div className="progress-bar" style={{ scaleX }} />
                         <Navbar />
                         <Hero userName={userName} />
                         <About />
