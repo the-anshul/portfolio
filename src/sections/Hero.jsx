@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
 
 const Hero = ({ userName }) => {
     return (
@@ -40,6 +41,14 @@ const Hero = ({ userName }) => {
                 >
                     <a href="#projects" className="btn btn-primary">View My Work</a>
                     <a href="#contact" className="btn btn-outline">Contact Me</a>
+                    <a 
+                        href="/resume.pdf" 
+                        download="Anshul_Resume.pdf"
+                        className="btn btn-download"
+                    >
+                        <FaDownload style={{ marginRight: '0.5rem' }} />
+                        Download CV
+                    </a>
                 </motion.div>
 
                 <motion.div 
@@ -49,10 +58,10 @@ const Hero = ({ userName }) => {
                     className="hero-socials"
                 >
                     <a href="https://github.com/the-anshul" target="_blank" rel="noopener noreferrer" title="GitHub">
-                        <span className="icon">🐙</span>
+                        <FaGithub />
                     </a>
                     <a href="https://www.linkedin.com/in/the-cyber-wolf" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                        <span className="icon">🔗</span>
+                        <FaLinkedin />
                     </a>
                 </motion.div>
             </div>

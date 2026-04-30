@@ -2,11 +2,25 @@ import { motion } from 'framer-motion'
 
 const experiences = [
     {
-        title: "B.Tech Student",
-        company: "University / College",
-        duration: "2023 - 2026",
-        description: "Currently pursuing my Bachelor of Technology degree. Exploring core fundamentals, continuously learning new technologies, and actively building practical projects.",
+        title: "B.Tech — Computer Science & Engineering",
+        company: "Amity University",
+        duration: "2023 – 2027",
+        description: "Specializing in Cybersecurity and Network Defense. Actively building practical tools, participating in CTFs, and exploring areas like OSINT, penetration testing, and security automation.",
         icon: "🎓"
+    },
+    {
+        title: "Security Researcher & Tool Builder",
+        company: "Self-Directed / Open Source",
+        duration: "2024 – Present",
+        description: "Built ReconX — a modular async recon automation framework. Developed AI-NIDS for hybrid intrusion detection using ML and signature-based techniques. Created Logs Analyser for automated threat detection in server logs.",
+        icon: "🛡️"
+    },
+    {
+        title: "Certifications & Achievements",
+        company: "TryHackMe · HackTheBox · Coursera",
+        duration: "2023 – Present",
+        description: "Completed labs and learning paths in ethical hacking, network security, and digital forensics. Consistently solving CTF challenges to sharpen offensive and defensive security skills.",
+        icon: "🏆"
     }
 ]
 
@@ -20,7 +34,7 @@ const WorkExperience = () => {
                 className="section-header"
             >
                 <h2 className="gradient-text">My Journey</h2>
-                <p>Professional experience and milestones in my career.</p>
+                <p>Education, projects, and milestones in my cybersecurity career.</p>
             </motion.div>
 
             <div className="experience-container">

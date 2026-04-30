@@ -61,8 +61,6 @@ const Intro = ({ onComplete }) => {
                     </motion.div>
                 )}
 
-
-
                 {step === 3 && (
                     <motion.div
                         key="decrypt"
@@ -70,7 +68,7 @@ const Intro = ({ onComplete }) => {
                         animate={{ opacity: 1 }}
                         style={{ fontSize: '1.2rem', textAlign: 'center' }}
                     >
-                        DECRYPTING ASSESTS FOR <br />
+                        DECRYPTING ASSETS FOR <br />
                         <span className="gradient-text" style={{ fontSize: '2rem', fontWeight: 800 }}>{name.toUpperCase()}</span>
                     </motion.div>
                 )}
