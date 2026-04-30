@@ -6,7 +6,6 @@ const projects = [
         description: "A modular, async CLI-based Recon, Enumeration & Vulnerability automation framework. Built with an adapter pattern for external tools, centralized data models, state management for resumability, auto tool installation, and rich reporting.",
         tags: ["Python", "AsyncIO", "Pydantic", "Rich", "CLI", "Cybersecurity"],
         image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=800",
-        link: "https://github.com/the-anshul/reconx",
         github: "https://github.com/the-anshul/reconx"
     },
     {
@@ -14,7 +13,6 @@ const projects = [
         description: "A comprehensive log analysis engine designed to parse and monitor server logs for security anomalies, performance bottlenecks, and automated threat detection.",
         tags: ["Python", "Data Analysis", "Security", "Logging"],
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-        link: "https://github.com/the-anshul/logs_analyser",
         github: "https://github.com/the-anshul/logs_analyser"
     },
     {
@@ -22,7 +20,6 @@ const projects = [
         description: "Hybrid network intrusion detection system combining Machine Learning anomalies with signature-based intelligence to identify zero-day threats in real-time.",
         tags: ["Python", "Machine Learning", "Scapy", "Cybersecurity"],
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-        link: "https://github.com/the-anshul/AI-NIDS",
         github: "https://github.com/the-anshul/AI-NIDS"
     },
     {
@@ -30,7 +27,7 @@ const projects = [
         description: "An interactive visualization of LeetCode progress, gamifying coding interview preparation through a dynamic data-driven interface.",
         tags: ["JavaScript", "Visualization", "Frontend", "API"],
         image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-        link: "https://github.com/the-anshul/leetcode-city",
+        demo: "https://github.com/the-anshul/leetcode-city", // Update this with actual demo URL if deployed
         github: "https://github.com/the-anshul/leetcode-city"
     }
 ]
@@ -70,7 +67,9 @@ const Projects = () => {
                                 ))}
                             </div>
                             <div className="project-links">
-                                <a href={project.link} className="link-btn">Demo</a>
+                                {project.demo && (
+                                    <a href={project.demo} className="link-btn">Demo</a>
+                                )}
                                 <a href={project.github} className="link-btn github">GitHub</a>
                             </div>
                         </div>

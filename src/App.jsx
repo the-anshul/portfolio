@@ -10,6 +10,7 @@ import WorkExperience from './sections/WorkExperience'
 import Contact from './sections/Contact'
 import Footer from './components/Footer'
 import Intro from './sections/Intro'
+import Skills from './sections/Skills'
 
 function App() {
     const [showIntro, setShowIntro] = useState(true)
@@ -33,6 +34,7 @@ function App() {
                         <Navbar />
                         <Hero userName={userName} />
                         <About />
+                        <Skills />
                         <Projects />
                         <WorkExperience />
                         <Contact />
