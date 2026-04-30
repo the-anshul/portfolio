@@ -12,7 +12,7 @@ const Hero = ({ userName }) => {
                     transition={{ duration: 0.5 }}
                     className="hero-subtitle"
                 >
-                    HI, I'M <span className="gradient-text">{userName?.toUpperCase() || 'ANSHUL'}</span>
+                    {userName && userName !== 'Guest' ? `WELCOME, ${userName.toUpperCase()} | ` : ''} HI, I'M <span className="gradient-text">ANSHUL</span>
                 </motion.p>
                 
                 <motion.h1 
